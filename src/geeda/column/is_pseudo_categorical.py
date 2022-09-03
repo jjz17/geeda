@@ -18,7 +18,7 @@ def is_pseudo_categorical(
     """
     if bins is None:
         bins = column.size
-    
+
     # Replace inf values with nan
     # Drop inf values and not nan? Right now they're dropped by is_categorical if dropna is true
     column.replace([np.inf, -np.inf], np.nan, inplace=True)
