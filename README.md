@@ -2,6 +2,18 @@
 Pronounced ghee-dah or jee-dee-aye \
 Gee.D.A, GEneral EDA: General EDA Framework for Pandas DataFrames
 
+## Where to get it
+The source code is currently hosted on GitHub at:
+https://github.com/jjz17/geeda
+
+Binary installers for the latest released version are available at the [Python
+Package Index (PyPI)](https://pypi.org/project/geeda/).
+
+```bash
+# PyPI
+pip install pandas
+```
+
 # Ideas
 * Establish standard output format of functions: e.g. Dict[column, data]
 
