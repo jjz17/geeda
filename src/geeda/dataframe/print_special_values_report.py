@@ -12,4 +12,4 @@ class SpecialValue(Enum):
 
 
 
-def print_special_values_report(df: pd.DataFrame, columns: )
+def print_special_values_report(df: pd.DataFrame, columns: Union[])
