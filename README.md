@@ -11,12 +11,13 @@ Package Index (PyPI)](https://pypi.org/project/geeda/).
 
 ```bash
 # PyPI
-pip install pandas
+pip install geeda
 ```
 
 # Ideas
 * Establish standard output format of functions: e.g. Dict[column, data]
 * Add settings to Geeda object for max_categorical_threshold value, etc.
+* Add CI/CD with Github or Jenkins
 
 # Design Documentation
 
