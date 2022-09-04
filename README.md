@@ -16,7 +16,7 @@ pip install pandas
 
 # Ideas
 * Establish standard output format of functions: e.g. Dict[column, data]
-
+* Add settings to Geeda object for max_categorical_threshold value, etc.
 
 # Design Documentation
 
