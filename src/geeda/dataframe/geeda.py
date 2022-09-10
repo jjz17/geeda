@@ -14,6 +14,15 @@ class Geeda:
         eda_functions: Union[Callable, List[Callable]],
         columns: Optional[Union[str, List[str]]] = None,
     ) -> None:
+        """
+        Apply the given EDA functions on the given columns of the dataframe.
+
+        Args:
+            eda_functions (Union[Callable, List[Callable]]):
+                The EDA function(s) to apply on the columns
+            columns (Optional[Union[str, List[str]]], optional):
+                The column(s) to apply the EDA functions on, defaults to all columns in the dataframe
+        """
         columns = (
             self.df.columns
             if columns is None
