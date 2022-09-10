@@ -2,7 +2,7 @@ import pandas as pd
 from typing import List, Union, Callable
 import inspect
 
-from utils import make_list, validate_columns
+from src.geeda.utils import make_list, validate_columns
 
 
 class Geeda:

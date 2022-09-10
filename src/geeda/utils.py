@@ -15,7 +15,7 @@ def make_list(input: Union[List[Any], Any]) -> List[Any]:
             The input object wrapped in a list if it isn't already a list
     """
     if not isinstance(input, list):
-        input = list(input)
+        input = [input]
     return input
 
 
