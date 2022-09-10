@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import List, Union, Callable
+from typing import List, Union, Callable, Optional
 import inspect
 
 from src.geeda.utils import make_list, validate_columns
@@ -11,10 +11,14 @@ class Geeda:
 
     def apply(
         self,
-        columns: Union[str, List[str]],
         eda_functions: Union[Callable, List[Callable]],
+        columns: Optional[Union[str, List[str]]] = None,
     ) -> None:
-        columns = validate_columns(df=self.df, columns=columns)
+        columns = (
+            self.df.columns
+            if columns is None
+            else validate_columns(df=self.df, columns=columns)
+        )
         eda_funcs: List[Callable] = make_list(eda_functions)
 
         # Separate column and dataframe functions
