@@ -1,0 +1,2 @@
+class Printout:
+    pass
