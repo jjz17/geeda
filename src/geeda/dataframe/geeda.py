@@ -40,9 +40,17 @@ class Geeda:
             else:
                 df_functions.append(function)
 
-        for function in column_functions:
-            for column in columns:
-                function(self.df[column])
+        column_results = dict()
+        column_printout_idx = [function.__name__ for function in column_functions]
+        for column in columns:
+            single_column_results = []
+            for function in column_functions:
+                result = function(self.df[column])
+                single_column_results.append(result)
+            column_results[column] = single_column_results
 
+        df_results = []
+        df_printout_idx = [function.__name__ for function in df_functions]
         for function in df_functions:
-            function(self.df)
+            result = function(self.df)
+            df_results.append(result)
