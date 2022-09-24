@@ -1,5 +1,5 @@
-from calendar import c
 from typing import List, Dict, Any
+from src.geeda.utils import print_df
 
 
 class Printout:
@@ -18,4 +18,7 @@ class Printout:
         self.df_results = df_results
 
     def printout(self):
-        pass
+        print("Column-wise EDA Results")
+        print_df(self.column_printout)
+        print("DF-wise EDA Results")
+        print_df(self.df_printout)
