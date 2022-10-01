@@ -20,4 +20,5 @@ from src.geeda.column.is_categorical import is_categorical
     ],
 )
 def test_is_categorical(column, max_threshold, expected):
+    # Act, Assert
     assert is_categorical(column, max_threshold) == expected
