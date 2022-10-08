@@ -22,7 +22,7 @@ def test_geeda(df, columns, eda_functions, expected, capsys):
     geeda = Geeda(df)
 
     # Act
-    geeda.apply(columns, eda_functions)
+    geeda.apply(eda_functions, columns)
 
     # Assert
     assert expected in capsys.readouterr().out

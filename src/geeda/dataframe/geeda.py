@@ -54,3 +54,5 @@ class Geeda:
         for function in df_functions:
             result = function(self.df)
             df_results.append(result)
+
+        # Print results
