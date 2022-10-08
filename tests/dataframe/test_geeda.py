@@ -12,7 +12,7 @@ from src.geeda.column.is_categorical import is_categorical
             pd.DataFrame({"a": range(1, 6), "b": range(6, 11)}),
             "a",
             is_categorical,
-            "True",
+            "is",
         ],
     ],
     ids=["Basic"],

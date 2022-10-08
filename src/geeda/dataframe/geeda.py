@@ -2,7 +2,7 @@ import pandas as pd
 from typing import List, Union, Callable, Optional
 import inspect
 
-from src.geeda.utils import make_list, validate_columns
+from geeda.utils import make_list, validate_columns, print_df
 
 
 class Geeda:
@@ -48,11 +48,15 @@ class Geeda:
                 result = function(self.df[column])
                 single_column_results.append(result)
             column_results[column] = single_column_results
+        column_printout = pd.DataFrame(column_results, index=column_printout_idx)
 
         df_results = []
         df_printout_idx = [function.__name__ for function in df_functions]
         for function in df_functions:
             result = function(self.df)
             df_results.append(result)
+        df_printout = pd.DataFrame({"results": df_results}, index=df_printout_idx)
 
         # Print results
+        print_df(column_printout)
+        print_df(df_printout)
