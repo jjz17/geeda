@@ -1,5 +1,5 @@
 import pandas as pd
-from typing import List, Union, Callable, Optional
+from typing import List, Union, Callable, Optional, Tuple
 import inspect
 
 from geeda.utils import make_list, validate_columns, print_df
@@ -13,7 +13,7 @@ class Geeda:
         self,
         eda_functions: Union[Callable, List[Callable]],
         columns: Optional[Union[str, List[str]]] = None,
-    ) -> None:
+    ) -> Tuple[pd.DataFrame, pd.DataFrame]:
         """
         Apply the given EDA functions on the given columns of the dataframe.
 
@@ -22,6 +22,11 @@ class Geeda:
                 The EDA function(s) to apply on the columns
             columns (Optional[Union[str, List[str]]], optional):
                 The column(s) to apply the EDA functions on, defaults to all columns in the dataframe
+
+        Returns:
+            Tuple[pd.DataFrame, pd.DataFrame]:
+                A tuple with the first element being the `column_printout` DataFrame and the second element
+                being the `df_printout` DataFrame
         """
         columns = (
             self.df.columns
@@ -61,3 +66,5 @@ class Geeda:
         column_printout.a = column_printout.a.astype(bool)
         print_df(column_printout)
         print_df(df_printout)
+
+        return column_printout, df_printout
