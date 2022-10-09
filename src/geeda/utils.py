@@ -1,5 +1,6 @@
 import pandas as pd
 from typing import List, Union, Any
+from tabulate import tabulate
 
 
 def make_list(input: Union[List[Any], Any]) -> List[Any]:
@@ -47,3 +48,14 @@ def validate_columns(df: pd.DataFrame, columns: Union[str, List[str]]) -> List[s
     if len(missing_columns) > 0:
         raise KeyError(f"Column(s) {missing_columns} is/are not in the DataFrame")
     return columns
+
+
+def print_df(df: pd.DataFrame) -> None:
+    """
+    Print a DataFrame in a structured format.
+
+    Args:
+        df (pd.DataFrame):
+            DataFrame to print
+    """
+    print(tabulate(df, headers="keys", tablefmt="pretty"))

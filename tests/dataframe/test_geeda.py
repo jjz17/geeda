@@ -12,7 +12,7 @@ from src.geeda.column.is_categorical import is_categorical
             pd.DataFrame({"a": range(1, 6), "b": range(6, 11)}),
             "a",
             is_categorical,
-            "True",
+            "is",
         ],
     ],
     ids=["Basic"],
@@ -22,7 +22,7 @@ def test_geeda(df, columns, eda_functions, expected, capsys):
     geeda = Geeda(df)
 
     # Act
-    geeda.apply(columns, eda_functions)
+    geeda.apply(eda_functions, columns)
 
     # Assert
     assert expected in capsys.readouterr().out
