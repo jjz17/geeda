@@ -18,4 +18,5 @@ def check_duplicates(df: pd.DataFrame, columns: List[str]) -> int:
             The number of duplicate rows present
     """
     df = df[columns]
+    print(df.drop_duplicates(subset=columns))
     return len(df) - len(df.drop_duplicates())
