@@ -12,8 +12,3 @@ geeda = Geeda(df)
 
 # Act
 geeda.apply([is_categorical], ["a", "b"])
-
-
-print(is_categorical(df.a))
-
-print_df(pd.DataFrame({"a": [False, True], "b": [True, False]}))

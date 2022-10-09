@@ -58,4 +58,4 @@ def print_df(df: pd.DataFrame) -> None:
         df (pd.DataFrame):
             DataFrame to print
     """
-    print(tabulate(df, headers="keys", tablefmt="psql"))
+    print(tabulate(df, headers="keys", tablefmt="pretty"))
