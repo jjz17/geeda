@@ -6,6 +6,10 @@ from geeda.utils import make_list, validate_columns, print_df
 
 
 class Geeda:
+    """
+    Wrapper class for pd.DataFrame to enable efficient EDA.
+    """
+
     def __init__(self, df: pd.DataFrame) -> None:
         self.df = df
 
@@ -58,7 +62,7 @@ class Geeda:
         df_results = []
         df_printout_idx = [function.__name__ for function in df_functions]
         for function in df_functions:
-            result = function(self.df)
+            result = function(self.df, columns)
             df_results.append(result)
         df_printout = pd.DataFrame({"results": df_results}, index=df_printout_idx)
 
