@@ -63,8 +63,9 @@ class Geeda:
         df_printout = pd.DataFrame({"results": df_results}, index=df_printout_idx)
 
         # Print results
-        column_printout.a = column_printout.a.astype(bool)
+        print("\nColumn-wise EDA Results")
         print_df(column_printout)
+        print("\nDF-wise EDA Results")
         print_df(df_printout)
 
         return column_printout, df_printout

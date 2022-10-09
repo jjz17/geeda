@@ -14,4 +14,5 @@ def check_inf(column: pd.Series) -> int:
         int:
             The number of infinite values present
     """
-    return np.isinf(column).values.ravel().sum()
+    # return np.isinf(column).values.ravel().sum()
+    return column.isin([np.inf, -np.inf]).values.sum()
