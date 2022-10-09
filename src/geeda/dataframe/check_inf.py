@@ -1,6 +1,16 @@
 import pandas as pd
-from typing import List
 
 
-def check_inf(df: pd.DataFrame, columns: List[str]):
+def check_inf(column: pd.Series) -> int:
+    """
+    Quantify the amount of infinite values present in the given column.
+
+    Args:
+        column (pd.Series):
+            The column to analyze
+
+    Returns:
+        int:
+            The number of infinite values present
+    """
     pass
