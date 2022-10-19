@@ -1,3 +1,6 @@
+name: Run Tests
+run-name: ${{ github.actor }} is unit testing with GitHub Actions 🚀
+
 # Run this job on pushes to `main`, and for pull requests. If you don't specify
 # `branches: [main], then this actions runs _twice_ on pull requests, which is
 # annoying.
@@ -11,11 +14,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out repository code
+        uses: actions/checkout@v2
 
       # If you wanted to use multiple Python versions, you'd have specify a matrix in the job and
       # reference the matrixe python version here.
-      - uses: actions/setup-python@v2
+      - name: Set up python
+        uses: actions/setup-python@v2
         with:
           python-version: 3.9
 
@@ -24,7 +29,7 @@ jobs:
       # number in the cache key, and the "-0" suffix: this allows you to invalidate the cache
       # manually if/when you want to upgrade Poetry, or if something goes wrong. This could be
       # mildly cleaner by using an environment variable, but I don't really care.
-      - name: cache poetry install
+      - name: Cache poetry install
         uses: actions/cache@v2
         with:
           path: ~/.local
@@ -48,7 +53,7 @@ jobs:
       # Cache your dependencies (i.e. all the stuff in your `pyproject.toml`). Note the cache
       # key: if you're using multiple Python versions, or multiple OSes, you'd need to include
       # them in the cache key. I'm not, so it can be simple and just depend on the poetry.lock.
-      - name: cache deps
+      - name: Cache deps
         id: cache-deps
         uses: actions/cache@v2
         with:
