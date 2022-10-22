@@ -18,6 +18,8 @@ pip install geeda
 * Establish standard output format of functions: e.g. Dict[column, data]
 * Add settings to Geeda object for max_categorical_threshold value, etc.
 * Add CI/CD with Github or Jenkins
+* For implementing cli for EDA on files that can be converted to DataFrames (csv, excel, etc.)
+https://stackoverflow.com/questions/56534678/how-to-create-a-cli-in-python-that-can-be-installed-with-pip
 
 # Design Documentation
 
