@@ -54,14 +54,14 @@ def test_is_significant(p_value, alpha, expected):
         ],
     ],
     ids=[
-        "Categorical with 2 unique values",
-        "Categorical with 4 unique values",
-        "Not categorical with 4 unique values",
-        "Not categorical with all unique values",
-        "Categorical with 2 unique values",
-        "Categorical with 4 unique values",
-        "Not categorical with 4 unique values",
-        "Not categorical with all unique values",
+        "Even split 1's and 2's with 10 values, 0.05 alpha",
+        "1-4 with 10 values, 0.05 alpha",
+        "1-4 with 10 values, 0.01 alpha",
+        "1-5 all unique values, 0.01 alpha",
+        "Standad normal with 100 values, 0.05 alpha",
+        "Normal with 100 values, 0.01 alpha",
+        "Standard uniform with 100 values, 0.05 alpha",
+        "Uniform with 100 values, 0.01 alpha",
     ],
 )
 def test_check_distribution(column, alpha, expected):
