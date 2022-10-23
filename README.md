@@ -31,6 +31,7 @@ pip install geeda
 
 ## Add new dependencies
 1. `poetry add <package>`
+    * for dev dependencies: `poetry add <package> --dev`
 2. `poetry update`
 3. `poetry lock` (Not necessary)
 
@@ -38,6 +39,6 @@ pip install geeda
 * Python3
 * Poetry (dependency management, publishing library)
 * Docker (containerization of services and tests)
-* Git and GitHub (version control)
+* Git and GitHub (version control, CI/CD pipeline)
 * Pre-commit (hooks for improved code quality)
 * Black (code formatting)
