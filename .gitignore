@@ -2,3 +2,4 @@
 poetry.lock
 setup.cfg
 dist/
+.vscode
