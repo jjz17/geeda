@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "geeda"
-version = "0.0.1"
+version = "0.1.0"
 description = "General EDA Framework for Pandas DataFrames"
 authors = ["Jason Zhang <jasonjzhang17@gmail.com>"]
 readme = "README.md"
